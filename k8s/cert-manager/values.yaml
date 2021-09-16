@@ -1,0 +1,1 @@
+installCRDs: true # Installer automatiquement les Custom Resource Definitions pour les certificats et challenges (déconseillé en prod mais anyway)
