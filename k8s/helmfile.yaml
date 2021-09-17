@@ -9,7 +9,6 @@ repositories:
   url: https://helm.twun.io
 
 releases:
-
 - name: ingress-nginx
   namespace: kube-system
   chart: ingress-nginx/ingress-nginx
@@ -30,3 +29,10 @@ releases:
   version: 3.5.17
   values:
   - jenkins/values.yaml
+
+- name: docker-registry
+  namespace: docker-registry
+  chart: twuni/docker-registry
+  version: 1.13.0
+  values:
+  - docker-registry/values.yaml
