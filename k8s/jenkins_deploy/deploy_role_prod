@@ -1,0 +1,37 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: jenkins-deploy-role
+  namespace: prod
+rules:
+  - apiGroups:
+        - "*"
+        # - apps
+        # - autoscaling
+        # - batch
+        # - extensions
+        # - networking.k8s.io
+        # - policy
+        # - rbac.authorization.k8s.io
+    resources:
+      # - componentstatuses
+      - configmaps
+      # - daemonsets
+      - deployments
+      # - events
+      # - endpoints
+      # - horizontalpodautoscalers
+      - ingresses
+      # - jobs
+      # - limitranges
+      # - namespaces
+      # - nodes
+      - pods
+      # - persistentvolumes
+      # - persistentvolumeclaims
+      # - resourcequotas
+      # - replicasets
+      # - replicationcontrollers
+      # - serviceaccounts
+      - services
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
